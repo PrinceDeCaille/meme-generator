@@ -18,3 +18,7 @@ use App\Http\Controllers\MemeController;
 });*/
 Route::get('/', [MemeController::class, 'index']);
 Route::post('/upload', [MemeController::class, 'upload']);
+Route::post('/save-meme', [MemeController::class, 'saveMeme']);
+Route::get('/meme/{filename}', [MemeController::class, 'viewMeme']);
+Route::get('/memes/download/{filename}', [MemeController::class, 'download'])->name('memes.download');
+

@@ -23,4 +23,14 @@ class MemeController extends Controller
 
         return response()->json(['url' => $url]);
     }
+    public function download($filename)
+{
+    $path = storage_path('app/public/memes/' . $filename);
+
+    if (!file_exists($path)) {
+        abort(404);
+    }
+
+    return response()->download($path);
+}
 }

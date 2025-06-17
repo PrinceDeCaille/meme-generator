@@ -15,6 +15,8 @@
         <input type="file" name="image" id="imageInput" required>
         <button type="submit">Uploader</button>
     </form>
+    <a href="{{ route('memes.download', ['filename' => $meme->filename]) }}" class="btn btn-primary">📥 Télécharger</a>
+
 
     <br>
 
